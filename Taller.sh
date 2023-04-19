@@ -14,7 +14,7 @@ function menu() {
 # show process information
 function verProcesosEnEjecucion() {
   echo "Procesos en ejecucion"
-  echo ps -aux
+  ps -aux
 }
 # kill process
 function killProces() {
