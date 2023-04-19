@@ -11,6 +11,9 @@ function menu() {
   echo "8) Salir"
 }
 
+alias total_memory='free -h | grep Mem | 'awk '\''{print $2}'\'''''
+alias out=echo "Terminar programa"
+
 # show process information
 function verProcesosEnEjecucion() {
   echo "Procesos en ejecucion"
@@ -46,13 +49,13 @@ function generarUnReporte() {
   echo "$1" >reports/"$2".txt
 }
 function terminarPrograma() {
-  echo "Terminar programa"
+  out
   exit 0
 }
 # show memory information
 informacionDeMemoria() {
   echo "Memoria"
-  echo "Memoria total: $(free -h | grep Mem | awk '{print $2}')"
+  echo "Memoria total: $(total_memory)"
   echo "Memoria libre: $(free -h | grep Mem | awk '{print $4}')"
   echo "Memoria usada: $(free -h | grep Mem | awk '{print $3}')"
   echo "Memoria compartida: $(free -h | grep Mem | awk '{print $5}')"
